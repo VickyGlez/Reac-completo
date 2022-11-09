@@ -35,6 +35,12 @@ function ContactoProvider(props){
     localStorage.setItem("contatos",JSON.stringify(contactosTemporal));
     setContactosList(contactosTemporal);
   }
+  function agregarAmigo(amigo){
+    let contactosTemporal=[...contactos];
+    contactosTemporal.push(amigo);
+    localStorage.setItem("contactos",JSON.stringify(contactosTemporal));
+    setContactosList(contactosTemporal);
+  }
 
   if(valorBusqueda.length>0)
   {
@@ -57,7 +63,8 @@ function ContactoProvider(props){
             contactosFiltro,
             borrarAmigo,
             modal,
-            setModal
+            setModal,
+            agregarAmigo
             
         }}>
 
